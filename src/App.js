@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from 'react';
+import {Route,Switch} from 'react-router-dom';
+import Loader from 'react-loader-spinner';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+
+import Welcome from "./components/Welcome/Welcome";
+
+const SignUp = lazy(() => import('./containers/SignUp/SignUp'));
+const Login = lazy(() => import('./containers/Login/Login'));
+const Profile = lazy(() => import('./containers/Profile/Profile'));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return (<>
+      <Suspense fallback={<Loader type="Rings" color="#64a19d" height={700} width={200} style={{display:'flex',justifyContent: 'center'}}
+      />}>
+          <Switch>
+              <Route path="/signUp" component={SignUp}/>
+              <Route path="/login" component={Login}/>
+              <Route path="/profile" component={Profile}/>
+              <Route path="/" exact component={Welcome}/>
+          </Switch>
+      </Suspense>
+  </>);
 }
 
 export default App;

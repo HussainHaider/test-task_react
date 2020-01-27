@@ -1,0 +1,54 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.AppHeader {
+    background-color: #282c34;
+    background-image:linear-gradient(to bottom,rgba(22,22,22,.3) 0,rgba(22,22,22,.7) 75%,#161616 100%),url(../../assets/images/bg-masthead.jpg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.AppHeader h1{
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: .8rem;
+    background: -webkit-linear-gradient(#eee, #3330);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1%;
+}
+
+.App_link {
+    color: #61dafb;
+}
+
+.Button_div {
+    display: inline-block;
+}
+
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
